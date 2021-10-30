@@ -22,12 +22,12 @@ public class Message implements Serializable{
     
     @ManyToOne
     @JoinColumn(name = "id")
-    @JsonIgnoreProperties({"message","client","reservation"})
+    @JsonIgnoreProperties({"messages","client","reservations"})
     private Bikes bikes;
     
     @ManyToOne
     @JoinColumn(name = "clientId")
-    @JsonIgnoreProperties({"message","reservation","client"})
+    @JsonIgnoreProperties({"messages","reservations","client"})
     private Client client;
 
     public Integer getIdMessage() {
