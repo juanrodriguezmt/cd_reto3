@@ -21,8 +21,8 @@ public class Bikes implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     
     private Integer id;
-    private String brand;
     private String name;
+    private String brand;
     private Integer year;
     private String description;
 
