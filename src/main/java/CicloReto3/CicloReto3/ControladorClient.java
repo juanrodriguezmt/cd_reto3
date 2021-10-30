@@ -41,7 +41,7 @@ public class ControladorClient {
     }
     
     
-    @PostMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Client update(@RequestBody Client client){
         return servicios.update(client);
