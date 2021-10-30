@@ -38,7 +38,7 @@ public class ControladorCategory {
         return servicios.save(category);
     }
     
-    @PostMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Category update(@RequestBody Category category){
         return servicios.update(category);
