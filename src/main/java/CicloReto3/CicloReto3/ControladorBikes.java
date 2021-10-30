@@ -37,7 +37,7 @@ public class ControladorBikes {
         return servicios.save(bikes);
     }
     
-    @PostMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Bikes update(@RequestBody Bikes bikes){
         return servicios.update(bikes);
