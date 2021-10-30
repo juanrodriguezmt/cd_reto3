@@ -31,12 +31,12 @@ public class Bikes implements Serializable {
     @JsonIgnoreProperties("bikes")
     private Category category;
     
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="bikes")
-    @JsonIgnoreProperties({"bikes","client"})
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="bike")
+    @JsonIgnoreProperties({"bike","client"})
     public List<Message> message;
     
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="bikes")
-    @JsonIgnoreProperties({"bikes","client"})
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="bike")
+    @JsonIgnoreProperties({"bike","client"})
     public List<Reservation> reservation;
 
     public Integer getId() {
