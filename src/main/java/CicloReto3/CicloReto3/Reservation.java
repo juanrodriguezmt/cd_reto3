@@ -71,12 +71,12 @@ public class Reservation implements Serializable{
         this.status = status;
     }
 
-    public Bikes getBikes() {
+    public Bikes getBike() {
         return bike;
     }
 
-    public void setBikes(Bikes bikes) {
-        this.bike = bikes;
+    public void setBike(Bikes bike) {
+        this.bike = bike;
     }
 
     public Client getClient() {
@@ -94,6 +94,8 @@ public class Reservation implements Serializable{
     public void setScore(String score) {
         this.score = score;
     }
+
+    
 
     
 }
