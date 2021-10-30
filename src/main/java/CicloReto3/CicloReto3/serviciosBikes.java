@@ -32,4 +32,43 @@ public class serviciosBikes {
             }
         }
     }
-}
+    
+    public Bikes update(Bikes bike){
+        if(bike.getId()!=null){
+            Optional<Bikes> e=metodosCrud.getBikes(bike.getId());
+            if(!e.isEmpty()){
+                if(bike.getName()!=null){
+                    e.get().setName(bike.getName());
+                }
+                if(bike.getBrand()!=null){
+                    e.get().setBrand(bike.getBrand());
+                }
+                if(bike.getYear()!=null){
+                    e.get().setYear(bike.getYear());
+                }
+                if(bike.getDescription()!=null){
+                    e.get().setDescription(bike.getDescription());
+                }
+                if(bike.getCategory()!=null){
+                    e.get().setCategory(bike.getCategory());
+                }
+                metodosCrud.save(e.get());
+                return e.get();
+            }else{
+                return bike;}
+        }else{
+            return bike;}
+    
+    }
+    
+    public boolean deleteBike(int bikeId){
+        Boolean aBoolean = getBikes(bikeId).map(bike -> {
+            metodosCrud.delete(bike);
+            return true;
+        }).orElse(false);
+        return aBoolean;
+        }
+    
+    }
+    
+
