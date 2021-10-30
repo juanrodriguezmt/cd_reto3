@@ -26,11 +26,11 @@ public class Client implements Serializable {
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
     @JsonIgnoreProperties("client")
-    public List<Message> message;
+    public List<Message> messages;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
     @JsonIgnoreProperties("client")
-    public List<Reservation> reservation   ;
+    public List<Reservation> reservations;
 
     public Integer getIdClient() {
         return idClient;
