@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "bikes")
+@Table (name = "bike")
 
 public class Bikes implements Serializable {
     @Id
@@ -31,13 +31,13 @@ public class Bikes implements Serializable {
     @JsonIgnoreProperties("bikes")
     private Category category;
     
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="bikes")
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="bike")
     @JsonIgnoreProperties({"bike","client"})
-    public List<Message> message;
+    public List<Message> messages;
     
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="bikes")
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="bike")
     @JsonIgnoreProperties({"bike","client"})
-    public List<Reservation> reservation;
+    public List<Reservation> reservations;
 
     public Integer getId() {
         return id;
