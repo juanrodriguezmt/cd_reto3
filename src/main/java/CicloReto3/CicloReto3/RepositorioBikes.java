@@ -18,7 +18,11 @@ public class RepositorioBikes {
         return crud.findById(id);
     }
     
-    public Bikes save(Bikes bikes){
-        return crud.save(bikes);
+    public Bikes save(Bikes bike){
+        return crud.save(bike);
+    }
+    
+    public void delete(Bikes bike){
+        crud.delete(bike);
     }
 }
