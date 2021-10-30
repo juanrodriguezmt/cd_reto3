@@ -39,7 +39,7 @@ public class ControladorMessage {
     public Message save(@RequestBody Message message){
         return servicios.save(message);
     }
-    @PostMapping("/update")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public Message update(@RequestBody Message message){
         return servicios.update(message);
