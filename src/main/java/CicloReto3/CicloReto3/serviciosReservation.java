@@ -8,6 +8,10 @@ package CicloReto3.CicloReto3;
  *
  * @author LAPTOP
  */
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,4 +73,33 @@ public class serviciosReservation {
         }).orElse(false);
         return aBoolean;
         }
+    
+    public List<CountClients> getTopClients(){
+        return metodosCrud.getTopClients();
+    }
+    
+    public StatusAmount getStatusReport(){
+        List<Reservation> completed=metodosCrud.getReservationByStatus("completed");
+        List<Reservation> cancelled=metodosCrud.getReservationByStatus("cancelled");
+
+        StatusAmount descAmt=new StatusAmount(completed.size(),cancelled.size());
+        return descAmt;
+    }
+    
+    public List<Reservation> getReservationPeriod(String dateA, String dateB){
+        SimpleDateFormat parser=new SimpleDateFormat("yyyy-MM-dd");
+        Date a = new Date();
+        Date b = new Date();
+        try{
+            a = parser.parse(dateA);
+            b = parser.parse(dateB);
+        }catch(ParseException e){
+            e.printStackTrace();
+        }
+        if(a.before(b)){
+            return metodosCrud.getReservationPeriod(a,b);
+        }else{
+            return new ArrayList<>();
+        }
+    }
 }
