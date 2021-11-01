@@ -62,7 +62,7 @@ public class ControladorReservation {
         return servicios.getStatusReport();
     }
     
-    @GetMapping("/report-categoria")
+    @GetMapping("/report-clients")
     public List<CountClients> getCountClients(){
         return servicios.getTopClients();
     }
