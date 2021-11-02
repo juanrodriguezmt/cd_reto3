@@ -9,21 +9,19 @@ package CicloReto3.CicloReto3;
  * @author LAPTOP
  */
 public class CountClients {
-    public Integer total;
+    public Long total;
     private Client client;
 
-    public CountClients(Integer total, Client client) {
+    public CountClients(Long total, Client client) {
         this.total = total;
         this.client = client;
     }
-    
-    
 
-    public Integer getTotal() {
+    public Long getTotal() {
         return total;
     }
 
-    public void setTotal(Integer total) {
+    public void setTotal(Long total) {
         this.total = total;
     }
 
@@ -34,6 +32,8 @@ public class CountClients {
     public void setClient(Client client) {
         this.client = client;
     }
+
+    
     
     
 }
